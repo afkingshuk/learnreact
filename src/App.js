@@ -1,11 +1,10 @@
 import React from 'react';
 import './App.css';
+import ClickCounter from './components/ClickCounter';
 // import Clock from './components/timer';
 // import Clock2 from './components/timer2';
 import Clock from './components/Clock';
-import Bracket from './components/composition/Bracket';
-import Emoji from './components/composition/Emoji';
-import Text from './components/composition/Text';
+import HoverCounter from './components/HoverCounter';
 // import Text from './components/inheritance/Text';
 import logo from './logo.svg';
 
@@ -30,7 +29,7 @@ function App() {
                             <Forms />
                             <CalculatorPage /> 
                             */}
-                            <Text />
+                            {/* <Text />
                             <Emoji>{({ addEmoji }) => <Text addEmoji={addEmoji} />}</Emoji>
                             <Emoji>
                                 {({ addEmoji }) => (
@@ -39,8 +38,10 @@ function App() {
                                             <Text addEmoji={addEmoji} addBracket={addBracket} />
                                         )}
                                     </Bracket>
-                                )}
-                            </Emoji>
+                                )}                                
+                            </Emoji> */}
+                            <ClickCounter />
+                            <HoverCounter />
                         </div>
                         <a
                             className="App-link"
