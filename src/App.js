@@ -3,9 +3,11 @@ import './App.css';
 // import Clock from './components/timer';
 // import Clock2 from './components/timer2';
 import Clock from './components/Clock';
+import Bracket from './components/composition/Bracket';
+import Emoji from './components/composition/Emoji';
+import Text from './components/composition/Text';
+// import Text from './components/inheritance/Text';
 import logo from './logo.svg';
-import CalculatorPage from './pages/CalculatorPage';
-import Forms from './pages/Forms';
 
 function App() {
     // eslint-disable-next-line no-unused-vars
@@ -24,8 +26,21 @@ function App() {
                             }
                         </p>
                         <div>
+                            {/* 
                             <Forms />
-                            <CalculatorPage />
+                            <CalculatorPage /> 
+                            */}
+                            <Text />
+                            <Emoji>{({ addEmoji }) => <Text addEmoji={addEmoji} />}</Emoji>
+                            <Emoji>
+                                {({ addEmoji }) => (
+                                    <Bracket>
+                                        {({ addBracket }) => (
+                                            <Text addEmoji={addEmoji} addBracket={addBracket} />
+                                        )}
+                                    </Bracket>
+                                )}
+                            </Emoji>
                         </div>
                         <a
                             className="App-link"
